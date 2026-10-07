@@ -1,0 +1,11 @@
+import { access, readFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
+import { spawnSync } from 'node:child_process';
+const root = resolve(import.meta.dirname, '..');
+const run = (args) => { const r = spawnSync(process.execPath, args, { cwd: root, stdio: 'inherit' }); if (r.status !== 0) process.exit(r.status ?? 1); };
+run(['scripts/build.mjs']);
+const required = ['dist/index.html', 'dist/styles.css', 'dist/app.js', 'dist/_headers', 'dist/_redirects', 'dist/manus-routes.json'];
+for (const file of required) await access(resolve(root, file));
+const html = await readFile(resolve(root, 'dist/index.html'), 'utf8');
+for (const marker of ['id="works"', 'id="approach"', 'id="about"', 'Yanagi', 'Mabubot', 'Mojule', 'Touwa Editor', 'Java Learning Support', 'Yomiage', 'AsobiBot', 'Kokoneads', 'Aurora Sauce Language']) if (!html.includes(marker)) throw new Error(`Missing marker: ${marker}`);
+console.log('✅ Portfolio build and content verification passed');
