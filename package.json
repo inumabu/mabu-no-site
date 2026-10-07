@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "scripts": {"build":"node scripts/build.mjs","verify":"node scripts/verify.mjs","dev":"python3 -m http.server 8788 -d public"},
-  "engines": {"node": ">=20"}
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "verify": "node scripts/verify.mjs",
+    "dev": "python3 -m http.server 8788 -d public"
+  },
+  "engines": {
+    "node": "22.16.0"
+  }
 }

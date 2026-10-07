@@ -7,6 +7,8 @@ GitHubプロフィールと同じ内容・表記をベースに、現在公開�
 
 ## ローカル実行
 
+Node.js 22.16.0 を使用します。
+
 ```bash
 npm run verify
 npm run dev
@@ -20,7 +22,7 @@ npm run dev
 - **Build command**: `npm run build`
 - **Build output directory**: `dist`
 - **Root directory**: `/`
-- **Node.js**: 20以上
+- **Node.js**: 22.16.0
 
 GitHubリポジトリをCloudflare Pagesに接続する場合は、`main` ブランチへのPushをデプロイ対象にします。
 このサイト自体は静的サイトとして動作し、アプリケーション用のWorkersやデータベースを必要としません。
@@ -39,13 +41,18 @@ GitHubリポジトリをCloudflare Pagesに接続する場合は、`main` ブラ
 - **kokoneads** — 開発者向けWebツールサイト
 - **aurorasauce** — 学習用プログラミング言語処理系
 
+## セキュリティ
+
+Cloudflare Pagesの `_headers` で CSP、クリックジャッキング対策、Referrer Policy、Permissions Policy を設定しています。
+Google Fontsを利用するため、CSPでは `fonts.googleapis.com` と `fonts.gstatic.com` のみ許可しています。
+
 ## デザイン方針
 
 - **Movement**: 編集部のケーススタディ × インタラクティブなインディーWeb
 - **Palette**: 墨色を土台に、蛍光イエローを意図、青を思考、オレンジを行動のサインとして使用
 - **Layout**: 中央寄せのカード一覧ではなく、余白のある縦長エディトリアル構成
 - **Typography**: 日本語の太い見出しと、Space Grotesk / DM Monoの技術的なメタ情報
-- **Interaction**: 作品フィルター、モバイルメニュー、Reduced Motion対応
+- **Interaction**: 作品フィルター、モバイルメニュー、Escapeキー対応、Reduced Motion対応
 
 ## 更新方針
 
