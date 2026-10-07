@@ -1,6 +1,6 @@
 # INUMABU Portfolio
 
-設計・実装・検証を一つの流れとして見せる、Cloudflare Pages向けの静的ポートフォリオです。
+まぶ / Mabu（@inumabu）のプロフィールと制作物を紹介する、Cloudflare Pages向けの静的ポートフォリオです。
 
 ## ローカル実行
 
@@ -35,7 +35,7 @@ GitHubリポジトリをCloudflare Pagesに接続する場合は、`main` ブラ
 
 - [inumabu/inumabu](https://github.com/inumabu/inumabu)
 
-ポートフォリオの`/api/profile`と`/api/projects`にも、このREADMEを同期元として記録しています。プロジェクトの説明を変更する場合は、まず上記リポジトリのREADMEを更新し、その内容をポートフォリオへ反映してください。
+ポートフォリオの`/api/profile`と`/api/projects`にも、GitHubプロフィールを同期元として記録しています。現在は自動更新ではなく、内容を確認した上で手動同期する構成です。
 
 ## デザイン方針
 
@@ -48,11 +48,19 @@ GitHubリポジトリをCloudflare Pagesに接続する場合は、`main` ブラ
 
 BuildスクリプトはWindows互換のため、`npx.cmd`を子プロセスとして起動せず、`node_modules`内のTailwind CLIとWrangler CLIをNode.jsから直接起動します。
 
-## 公開前に差し替える項目
+## 同期しているプロフィール情報
 
-- `public/index.html` の表示名、自己紹介、メールアドレス
-- GitHubプロフィールURLと各プロジェクトURL
-- `2026 / TOKYO` などのプロフィール情報
+GitHubプロフィールを基準に、以下を反映しています。
+
+- 表示名: `まぶ / Mabu`
+- ユーザー名: `inumabu`
+- Bio: `🛠️ なんでも作る個人開発者`
+- Location: `Gunma, Japan`
+- Email: `wanko.marble@gmail.com`
+- X: `@xx_mabu_xx` / `@i_mabu_`
+- 現在の公開プロジェクト: 10件
+
+Archived の `minase-cfw-bot` は現行プロジェクト一覧から除外しています。プロフィールREADMEやサイトの文言を変更する場合は、GitHubの `inumabu/inumabu` と合わせて更新してください。
 
 ## Hono API
 
