@@ -6,9 +6,18 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "verify": "node scripts/verify.mjs",
-    "dev": "python3 -m http.server 8788 -d public"
+    "dev": "wrangler pages dev public",
+    "dev:static": "python3 -m http.server 8788 -d public"
   },
   "engines": {
-    "node": "22.16.0"
+    "node": ">=18"
+  },
+  "dependencies": {
+    "hono": "^4.13.13"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261007.1",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.148.0"
   }
 }
