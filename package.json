@@ -1,13 +1,14 @@
 {
-  "name": "inumabu-portfolio",
+  "name": "mabu-no-site",
   "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
+    "audit": "node scripts/audit.mjs",
     "verify": "node scripts/verify.mjs",
-    "dev": "wrangler pages dev public",
-    "dev:static": "python3 -m http.server 8788 -d public"
+    "dev": "node scripts/dev.mjs",
+    "dev:static": "npm run build && python3 -m http.server 8788 -d dist"
   },
   "engines": {
     "node": ">=18"
@@ -17,7 +18,14 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20261007.1",
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
     "wrangler": "^4.148.0"
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.5.1": true,
+    "esbuild@0.28.1": true,
+    "workerd@1.20261006.1": true
   }
 }

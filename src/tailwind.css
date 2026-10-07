@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #111111;
+  --color-paper: #f5f4ef;
+  --color-lime: #dfff4f;
+  --color-signal-blue: #5a73ff;
+  --color-signal-orange: #ff6a36;
+  --font-display: "Zen Kaku Gothic New", sans-serif;
+  --font-ui: "DM Mono", monospace;
+}
+
+@source "../public";
